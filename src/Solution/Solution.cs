@@ -44,7 +44,46 @@ namespace Solution
     {
         public int Search(int[] nums, int target)
         {
-            throw new NotImplementedException();
+            int result = -1;
+
+            int startIndex = 0;
+            int endIndex = nums.Length - 1;
+
+            while (startIndex < endIndex)
+            {
+                int midIndex = ((endIndex - startIndex) / 2) + startIndex;
+
+                int startValue = nums[startIndex];
+                int endValue = nums[endIndex];
+                int midValue = nums[midIndex];
+
+                if (startValue == target) { return startIndex; }
+                if (midValue == target) { return midIndex; }
+                if (endValue == target) { return endIndex; }
+
+                if (startValue < midValue && target > startValue && target < midValue)
+                {
+                    // The target is between the start and middle, and the start
+                    // and the rotation point is not between these values
+                    endIndex = midIndex - 1;
+                    startIndex++;
+                }
+                else if (startValue > midValue && (target > startValue || target < midValue))
+                {
+                    // The rotation point is between the start and middle
+                    // And the target is larger than the start or smaller than the middle
+                    endIndex = midIndex - 1;
+                    startIndex++;
+                }
+                else
+                {
+                    // Else we should look for the target in the second half
+                    startIndex = midIndex + 1;
+                    endIndex--;
+                }
+            }
+
+            return result;
         }
     }
 }
