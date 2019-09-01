@@ -56,6 +56,12 @@ namespace Solution.Test
             7,
             ExpectedResult = -1
         )]
+
+        [TestCase(
+            new int[] { 5, 1, 2, 3, 4 },
+            1,
+            ExpectedResult = 1
+        )]
         public int Search(int[] nums, int target) => _sut.Search(nums, target);
     }
 }
