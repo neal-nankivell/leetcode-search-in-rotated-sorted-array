@@ -15,7 +15,6 @@ namespace Solution.Test
     {
         private ISolution _sut = new Fixture().Create<T>();
 
-        [TestCase(1, 2, ExpectedResult = 3)]
-        public int Add(params int[] input) => _sut.Add(input);
+        public int Search(int[] nums, int target) => _sut.Search(nums, target);
     }
 }

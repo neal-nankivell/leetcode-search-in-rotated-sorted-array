@@ -1,32 +1,40 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace Solution
 {
+    /*
+    Suppose an array sorted in ascending order is rotated
+    at some pivot unknown to you beforehand.
+
+    (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+
+    You are given a target value to search. If found in
+    the array return its index, otherwise return -1.
+
+    You may assume no duplicate exists in the array.
+
+    Your algorithm's runtime complexity must be in the
+    order of O(log n).
+    */
     public interface ISolution
     {
-        int Add(params int[] input);
+        int Search(int[] nums, int target);
     }
 
     public class NaiveSolution : ISolution
     {
-        // A simple solution using a foreach loop
-        public int Add(params int[] input)
+        public int Search(int[] nums, int target)
         {
-            int sum = 0;
-
-            foreach (int value in input)
-            {
-                sum += value;
-            }
-
-            return sum;
+            throw new NotImplementedException();
         }
     }
 
     public class ImprovedSolution : ISolution
     {
-        // A slightly cleaner solution using linq
-        // note: no notable performance change in this example
-        public int Add(params int[] input) => input.Sum();
+        public int Search(int[] nums, int target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
