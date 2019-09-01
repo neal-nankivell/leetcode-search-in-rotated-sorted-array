@@ -44,6 +44,11 @@ namespace Solution
     {
         public int Search(int[] nums, int target)
         {
+            if (nums.Length == 1)
+            {
+                return nums[0] == target ? 0 : -1;
+            }
+
             int result = -1;
 
             int startIndex = 0;
