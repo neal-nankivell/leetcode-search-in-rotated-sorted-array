@@ -54,7 +54,7 @@ namespace Solution
             int startIndex = 0;
             int endIndex = nums.Length - 1;
 
-            while (startIndex < endIndex)
+            while (startIndex <= endIndex)
             {
                 int midIndex = ((endIndex - startIndex) / 2) + startIndex;
 
