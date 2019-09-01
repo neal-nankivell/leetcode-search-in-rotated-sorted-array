@@ -20,9 +20,40 @@ namespace Solution.Test
             0,
             ExpectedResult = 4
         )]
+
         [TestCase(
             new[] { 4, 5, 6, 7, 0, 1, 2 },
             3,
+            ExpectedResult = -1
+        )]
+
+        [TestCase(
+            new[] { 1, 2 },
+            2,
+            ExpectedResult = 1
+        )]
+
+        [TestCase(
+            new[] { 1, 2, 3 },
+            2,
+            ExpectedResult = 1
+        )]
+
+        [TestCase(
+            new[] { 1 },
+            1,
+            ExpectedResult = 0
+        )]
+
+        [TestCase(
+            new[] { 1 },
+            7,
+            ExpectedResult = -1
+        )]
+
+        [TestCase(
+            new int[0],
+            7,
             ExpectedResult = -1
         )]
         public int Search(int[] nums, int target) => _sut.Search(nums, target);
